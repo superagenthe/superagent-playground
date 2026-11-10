@@ -8,7 +8,18 @@
 
 ![Before：基线没有应用界面](screenshots/before-baseline.png)
 
-## 首版界面
+## 赛博朋克主题
+
+界面默认使用暗色赛博朋克主题。用深色网格与扫描线作背景，霓虹青 `#00e5ff` 为主强调色、品红 `#ff2fd6` 为次强调色；计数、角标等使用等宽字体，面板带角标装饰与发光边框，键盘焦点使用高对比的黄色描边。原生控件通过 `color-scheme: dark` 呈现深色外观，并保留既有的 `prefers-reduced-motion` 降级。
+
+对比基线为 `3510cd0`（`main`，浅色主题），下图两组截图使用同一份种子数据、相同视口与截图脚本，仅主题不同。
+
+| 版本 | 桌面（1440 × 900） | 手机（390 × 844） |
+| --- | --- | --- |
+| Before：`3510cd0` 浅色主题 | ![Before：浅色桌面今日视图](screenshots/before-cyberpunk-desktop-today.png) | ![Before：浅色手机今日视图](screenshots/before-cyberpunk-mobile-today.png) |
+| After：本分支赛博朋克主题 | ![After：赛博朋克桌面今日视图](screenshots/after-desktop-today.png) | ![After：赛博朋克手机今日视图](screenshots/after-mobile-today.png) |
+
+## 界面截图
 
 ### 桌面
 

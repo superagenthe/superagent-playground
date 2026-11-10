@@ -194,8 +194,13 @@ test.describe('views, sorting and filters', () => {
     await expect(await navCount(page, '全部待办')).toBe('7');
 
     await selectNav(page, '未来 7 天');
+    const day7Label = await page.evaluate((iso) => {
+      const [year, month, day] = iso.split('-').map(Number);
+      const date = new Date(year, month - 1, day);
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    }, day7);
     await expect(page.locator('.task-title')).toHaveText(['明天任务', '第七天任务']);
-    await expect(page.locator('.group-head')).toContainText(['明天', '11/16']);
+    await expect(page.locator('.group-head')).toContainText(['明天', day7Label]);
     await expect(page.locator('.content')).not.toContainText('第八天任务');
     await expect(page.locator('.content')).not.toContainText('无日期任务');
 
